@@ -1,5 +1,1 @@
-*
-!.gitignore
-!PKGBUILD
-!*.install
-!*.patch
+powerline/
