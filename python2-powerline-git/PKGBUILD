@@ -4,7 +4,7 @@ _gitname=powerline
 _gitbranch=develop
 pkgname="python2-${_gitname}-git"
 pkgdesc='The ultimate statusline/prompt utility.'
-pkgver=822.225ac48
+pkgver=941.8af9981
 pkgrel=1
 url="https://github.com/Lokaltog/${_gitname}"
 license=('MIT')
@@ -22,6 +22,11 @@ source=("${_gitname}::git://github.com/Lokaltog/${_gitname}.git#branch=${_gitbra
         "${install}")
 sha256sums=('SKIP'
             'e8ab7fb51ac7244bfad973a999c9333ba4334fa391aa890489cf8c8f1211c94f')
+
+pkgver() {
+	cd "${_gitname}"
+	echo "$(git rev-list --count ${_gitbranch}).$(git rev-parse --short ${_gitbranch})"
+}
 
 package() {
 	cd "${_gitname}"
