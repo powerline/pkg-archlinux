@@ -17,7 +17,9 @@ optdepends=('python2-psutil: improved system information'
             'zsh: better shell prompt'
             'gvim: vim compiled with Python support')
 makedepends=('git' 'python2-setuptools')
-conflicts=('python2-powerline-git'
+conflicts=('python2-powerline'
+           'python-powerline-git'
+           'python-powerline'
            'otf-powerline-symbols-git')
 install="${_gitname}.install"
 source=("${_gitname}::git://github.com/powerline/${_gitname}.git#branch=${_gitbranch}"
